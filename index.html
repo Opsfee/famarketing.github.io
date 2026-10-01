@@ -3,43 +3,488 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FA Marketing Digital - Descubra o Segredo</title>
+    <title>FS Studio Digital | Engenharia, Perícia & Marketing</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #f8fafc; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center; }
-        .container { max-width: 600px; background: rgba(30, 41, 59, 0.7); padding: 40px 30px; border-radius: 16px; box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .logo { font-size: 28px; font-weight: 800; letter-spacing: 1px; color: #38bdf8; margin-bottom: 30px; display: inline-block; text-transform: uppercase; }
-        .logo span { color: #f8fafc; }
-        h1 { font-size: 26px; line-height: 1.4; margin-bottom: 20px; color: #f1f5f9; }
-        p { font-size: 16px; line-height: 1.6; color: #94a3b8; margin-bottom: 35px; }
-        .btn { display: block; width: 100%; max-width: 350px; margin: 0 auto 15px auto; padding: 16px 24px; font-size: 18px; font-weight: 700; text-decoration: none; border-radius: 8px; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; }
-        .btn-primary { background: #38bdf8; color: #0f172a; box-shadow: 0 4px 14px rgba(56, 189, 248, 0.4); }
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(56, 189, 248, 0.6); }
-        .btn-secondary { background: transparent; color: #94a3b8; border: 1px solid #334155; font-size: 14px; font-weight: 500; max-width: 250px; }
-        .btn-secondary:hover { background: rgba(255, 255, 255, 0.05); color: #f1f5f9; }
-        .footer { margin-top: 30px; font-size: 12px; color: #64748b; }
+        :root {
+            --bg-black: #05050a;          
+            --primary-dark: #0b1329;      
+            --neon-cyan: #00f5d4;         
+            --forensic-gold: #ffb703;     
+            --bg-card: #111827;           
+            --text-light: #94a3b8;        
+            --font-software: 'Inter', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-software);
+            background-color: var(--bg-black);
+            color: #f8fafc;
+            line-height: 1.6;
+            padding-top: 80px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: 80px;
+            background: rgba(5, 5, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--neon-cyan);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .nav-logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .nav-logo span { color: var(--neon-cyan); }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 24px;
+        }
+
+        .nav-link {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover { color: var(--neon-cyan); }
+
+        /* HERO */
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+            background: linear-gradient(180deg, var(--primary-dark) 0%, var(--bg-black) 100%);
+        }
+
+        .tag-live {
+            display: inline-block;
+            background: rgba(0, 245, 212, 0.1);
+            color: var(--neon-cyan);
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            border: 1px solid var(--neon-cyan);
+            box-shadow: 0 0 12px rgba(0, 245, 212, 0.2);
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            margin-bottom: 24px;
+            color: #ffffff;
+            line-height: 1.2;
+        }
+
+        .hero h1 span { color: var(--neon-cyan); }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 36px;
+            font-weight: 700;
+            border-radius: 8px;
+            text-decoration: none;
+            cursor: pointer;
+            background: transparent;
+            color: var(--neon-cyan);
+            border: 2px solid var(--neon-cyan);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: var(--neon-cyan);
+            color: #000000;
+            box-shadow: 0 0 20px rgba(0, 245, 212, 0.4);
+        }
+
+        /* SOBRE */
+        .sobre {
+            padding: 80px 0;
+            background: var(--primary-dark);
+        }
+
+        .grid-sobre {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .box-local {
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid var(--neon-cyan);
+            text-align: center;
+        }
+
+        .badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 24px;
+        }
+
+        .badge {
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            background: rgba(0, 245, 212, 0.05);
+            border: 1px solid var(--neon-cyan);
+            color: var(--neon-cyan);
+        }
+
+        /* ECOSSISTEMA / SOLUÇÕES */
+        .ecossistema {
+            padding: 100px 0;
+            background: var(--bg-black);
+        }
+
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+
+        .card-tech {
+            background: var(--bg-card);
+            border: 1px solid #1e293b;
+            border-radius: 12px;
+            padding: 30px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .card-tech:hover {
+            transform: translateY(-5px);
+            border-color: var(--neon-cyan);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+
+        .card-tech h4 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: #ffffff;
+        }
+
+        .card-tech p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* METODOLOGIA / PIPELINE */
+        .metodologia {
+            padding: 100px 0;
+            background: var(--primary-dark);
+        }
+
+        .grid-pipeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+        }
+
+        .step-card {
+            background: var(--bg-black);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid var(--neon-cyan);
+        }
+
+        .step-num {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--neon-cyan);
+            margin-bottom: 10px;
+        }
+
+        .step-card h4 {
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .step-card p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* CONTATO / LEADS */
+        .leads { 
+            padding: 100px 0; 
+            background: var(--bg-black);
+        }
+        
+        .form-wrapper {
+            max-width: 500px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid var(--neon-cyan);
+            box-shadow: 0 0 25px rgba(0, 245, 212, 0.1);
+        }
+
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: #fff; }
+        
+        .form-input {
+            width: 100%; 
+            padding: 14px;
+            background: #000000;
+            border: 1px solid #334155;
+            border-radius: 8px; 
+            color: #fff;
+            font-family: inherit;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--neon-cyan);
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: var(--neon-cyan);
+            color: #000000;
+            border: none;
+            padding: 16px;
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: opacity 0.3s ease;
+        }
+
+        .btn-submit:hover { opacity: 0.9; }
+
+        /* RODAPÉ */
+        .footer {
+            background: #000000;
+            padding: 40px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .footer-links { margin-bottom: 15px; }
+        .footer-links a {
+            color: var(--neon-cyan);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .grid-sobre { grid-template-columns: 1fr; }
+            .nav-menu { display: none; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- Logo da Empresa -->
-        <div class="logo">FA <span>Marketing Digital</span></div>
-        
-        <!-- Explicação / Headline -->
-        <h1>Como Pequenos Negócios Estão Multiplicando Suas Vendas Online Em Até 30 Dias</h1>
-        <p>Preparamos um guia prático e exclusivo mostrando o passo a passo exato que nossa agência utiliza para posicionar marcas no topo do mercado. Clique abaixo para garantir o seu acesso gratuito.</p>
-        
-        <!-- Botões Funcionais -->
-        <a href="https://wa.me" target="_blank" class="btn btn-primary">Quero Acessar o Guia Grátis</a>
-        <a href="#" class="btn btn-secondary">Saiba mais sobre a FA</a>
-        
-        <!-- Rodapé / Termos -->
-        <div class="footer">
-            &copy; 2026 FA Marketing Digital. Todos os direitos reservados.<br>
-            Esta página não faz parte do site do Facebook ou da Facebook Inc.
+    <!-- NAV -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="nav-logo">FS STUDIO<span> DIGITAL</span></a>
+            <ul class="nav-menu">
+                <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                <li><a href="#solucoes" class="nav-link">Soluções</a></li>
+                <li><a href="#metodologia" class="nav-link">Processo</a></li>
+                <li><a href="#contato" class="nav-link">Contato</a></li>
+            </ul>
         </div>
-    </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+        <div class="container">
+            <div class="tag-live">🔬 Algoritmo de Escala Ativo</div>
+            <h1>Marketing de Performance Criado por <span>Engenharia de Software</span></h1>
+            <p style="font-size: 1.2rem; color: var(--text-light); max-width: 800px; margin: 0 auto 30px auto;">
+                Elimine falhas de conversão. Unificamos métricas computacionais, segurança forense e estratégias digitais de alta precisão.
+            </p>
+            <a href="https://wa.me/5513999999999?text=Olá,%20gostaria%20de%20executar%20uma%20conexão" target="_blank" class="btn">Executar Conexão via WhatsApp</a>
+        </div>
+    </header>
+
+    <!-- SOBRE -->
+    <section class="sobre" id="sobre">
+        <div class="container">
+            <div class="grid-sobre">
+                <div class="box-local">
+                    <h3 style="color:#ffffff;">Felipe</h3>
+                    <p style="color: var(--neon-cyan); font-weight: 700; margin-bottom: 15px;">Founder - FS Studio Digital</p>
+                    <p style="color: var(--text-light);">📍 Baseado em<br><strong style="color: #fff;">Itanhaém - SP</strong></p>
+                </div>
+                <div>
+                    <h2 style="font-size: 2.2rem; margin-bottom: 15px; color: #fff;">Especialista com Formação Tríplice Avançada</h2>
+                    <p style="color: var(--text-light); margin-bottom: 20px;">Como <strong>Engenheiro de Software</strong> e formado em <strong>Perícia Forense Computacional</strong> e <strong>Marketing Digital e Empresarial</strong>, eu não crio apenas campanhas superficiais. Eu audito infraestruturas digitais para garantir ROI real.</p>
+                    <div class="badges">
+                        <span class="badge">Engenharia de Software</span>
+                        <span class="badge">Perícia Forense Computacional</span>
+                        <span class="badge">Marketing de Performance</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO SOLUÇÕES / ECOSSISTEMA -->
+    <section class="ecossistema" id="solucoes">
+        <div class="container">
+            <div class="section-header">
+                <h2>Soluções de Alta Precisão</h2>
+                <p>Engenharia e perícia aplicada ao crescimento do seu negócio.</p>
+            </div>
+            <div class="grid-cards">
+                <div class="card-tech">
+                    <div class="card-icon">🔍</div>
+                    <h4>Auditoria Forense de Tráfego</h4>
+                    <p>Identificação de vazamento de orçamento em tráfego pago, detecção de bots e otimização de rastreamento de dados.</p>
+                </div>
+                <div class="card-tech">
+                    <div class="card-icon">⚡</div>
+                    <h4>Engenharia de Landing Pages</h4>
+                    <p>Páginas com tempo de carregamento ultrarrápido, otimizadas segundo as diretrizes de performance do Google.</p>
+                </div>
+                <div class="card-tech">
+                    <div class="card-icon">🎯</div>
+                    <h4>Gestão de Tráfego de Alta Performance</h4>
+                    <p>Campanhas no Google, Meta e LinkedIn otimizadas por dados e métricas reais de conversão.</p>
+                </div>
+                <div class="card-tech">
+                    <div class="card-icon">⚙️</div>
+                    <h4>Tracking & Analytics Server-Side</h4>
+                    <p>Configuração avançada de API de Conversões (Meta/Google/GA4) via servidor para blindar perda de dados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO METODOLOGIA / PIPELINE -->
+    <section class="metodologia" id="metodologia">
+        <div class="container">
+            <div class="section-header">
+                <h2>Pipeline de Execução</h2>
+                <p>Metodologia clara e sistemática para máxima previsibilidade de resultados.</p>
+            </div>
+            <div class="grid-pipeline">
+                <div class="step-card">
+                    <div class="step-num">01</div>
+                    <h4>Diagnóstico Forense</h4>
+                    <p>Mapeamento completo da infraestrutura digital e identificação de gargalos de conversão.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">02</div>
+                    <h4>Arquitetura de Dados</h4>
+                    <p>Ajuste de pixels, APIs e engenharia da experiência do usuário (UX/UI).</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">03</div>
+                    <h4>Execução e Tráfego</h4>
+                    <p>Lançamento de campanhas segmentadas e otimização contínua de ROI.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">04</div>
+                    <h4>Escala Orientada a Dados</h4>
+                    <p>Relatórios forenses transparentes e ampliação da verba em canais validados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTATO / LEADS -->
+    <section class="leads" id="contato">
+        <div class="container">
+            <div class="form-wrapper">
+                <h3 style="color: #fff; font-size: 1.8rem; margin-bottom: 20px; text-align: center;">Inicie o Diagnóstico</h3>
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" class="form-input" placeholder="Seu nome ou empresa" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail Corporativo</label>
+                        <input type="email" id="email" class="form-input" placeholder="seu@email.com" required>
+                    </div>
+                    <button type="submit" class="btn-submit">Solicitar Auditoria Digital</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="#sobre">Sobre</a>
+                <a href="#solucoes">Soluções</a>
+                <a href="#metodologia">Processo</a>
+                <a href="#contato">Contato</a>
+            </div>
+            <p>&copy; 2026 FS Studio Digital. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
